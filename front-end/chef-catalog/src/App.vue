@@ -2,9 +2,14 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/profile">Profile</router-link>
     </div>
-    <router-view/>
+    <div class="content">
+      <router-view/>
+    </div>
+    <div class="footer">
+      <div class="githublink">Follow to my Github repo <a href="https://github.com/JadenHowell/creative-4">here</a></div>
+    </div>
   </div>
 </template>
 
@@ -28,5 +33,25 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.content {
+  padding: 20px 100px;
+  min-height: 400px;
+}
+
+/* Footer */
+.footer {
+  height: 50px;
+  background: #e3e3e3;
+  padding-top: 30px;
+  margin: 0 auto;
+  font-size: 16px;
+  width: 80%;
+}
+
+.githublink{
+  text-align: center;
+  margin: 0 auto;
 }
 </style>
