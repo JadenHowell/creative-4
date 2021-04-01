@@ -49,7 +49,8 @@ export default {
       try{
         let response = await axios.get("/api/chefs/"+chef._id+"/recipes");
         console.log(response.data);
-        this.recipes[chef.name] = response.data;
+        //this.$set triggers updates on the page whenever this deeper layer is created
+        this.$set(this.recipes, chef.name, response.data);
         return true;
       } catch (error) {
         console.log(error);
