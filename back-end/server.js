@@ -18,6 +18,26 @@ mongoose.connect('mongodb://localhost:27017/chef-competition', {
   useUnifiedTopology: true
 });
 
+// Configure multer so that it will upload to '../front-end/public/images'
+const multer = require('multer')
+const upload = multer({
+  dest: '../front-end/chef-catalog/public/images/',
+  limits: {
+    fileSize: 10000000
+  }
+});
+// Upload a photo. Uses the multer middleware for the upload and then returns
+// the path where the photo is stored in the file system.
+// the upload.   is what uses multer, sending it the photo
+app.post('/api/photos', upload.single('photo'), async (req, res) => {
+    // Just a safety check
+    if (!req.file) {
+      return res.sendStatus(400);
+    }
+    res.send({
+      path: "/images/" + req.file.filename
+    });
+});
 
 // Create a scheme for chefs
 const chefSchema = new mongoose.Schema({
