@@ -20,10 +20,12 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color:#fceae3;
 }
 
 #nav {
-  padding: 30px;
+  padding: 10px;
+  background-color:#fcd6c7;
 }
 
 #nav a {
@@ -32,18 +34,18 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #0A9478;
 }
 
 .content {
-  padding: 20px 100px;
-  min-height: 400px;
+  padding: 10px 100px;
+  min-height: 500px;
 }
 
 /* Footer */
 .footer {
   height: 50px;
-  background: #e3e3e3;
+  background-color:#fcd6c7;
   padding-top: 30px;
   margin: 0 auto;
   font-size: 16px;

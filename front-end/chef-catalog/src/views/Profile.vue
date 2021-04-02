@@ -1,7 +1,7 @@
 <template>
   <div class="Profile">
     <h1>Upload some more recipes!</h1>
-    <h3>Select a chef:</h3>
+    <h3>Selected chef: {{this.chef.name}}</h3>
     <div id="chefs">
       <button class="chefButton" v-for="chef in chefs" :key=chef._id @click=selectChef(chef)>{{chef.name}}</button>
     </div>
@@ -119,9 +119,17 @@ export default {
     }
   },
   created() {
-    this.getChefs();
+    this.setup();
   },
   methods: {
+    async setup(){
+      await this.getChefs();
+      if(this.chefs.length > 0){
+        this.chef = this.chefs[0];
+      } else {
+        this.chef = {name: "None"};
+      }
+    },
     fileChanged(event) {
       this.file = event.target.files[0]
     },

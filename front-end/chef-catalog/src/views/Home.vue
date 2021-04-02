@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Explore other chefs recipes!</h1>
+    <h1 class="pagename">Explore other chefs recipes!</h1>
     <div class="all-chefs">
       <div class="celeb-chef" v-for="chef in chefs" :key="chef._id">
         <h2 class="chefName">{{chef.name}}:</h2>
@@ -105,6 +105,10 @@ export default {
 </script>
 
 <style scoped>
+.pagename{
+  color: #000000;
+}
+
 .all-chefs{
   text-align: center;
 }
@@ -133,7 +137,7 @@ export default {
 }
 
 .selection{
-  /*background-color: #00ff00;*/
+  background-color:#f7af94;
   padding: 15px;
   max-width: 550px;
   margin: 0 auto;
