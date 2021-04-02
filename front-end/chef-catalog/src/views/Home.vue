@@ -95,9 +95,9 @@ export default {
             favorite: this.selectedRecipe.favorite,
             description: this.selectedRecipe.description,
         });
-        console.log(response);
+        //console.log(response);
       } catch (error){
-        console.log(error)
+        //console.log(error)
       }
     }
   }

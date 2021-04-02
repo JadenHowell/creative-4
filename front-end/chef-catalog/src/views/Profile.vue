@@ -155,7 +155,7 @@ export default {
         const response = await axios.get("/api/chefs");
         this.chefs = response.data;
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     },
     async newChef() {
@@ -165,7 +165,7 @@ export default {
         });
         this.getChefs();
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     },
     async deleteChef() {
@@ -173,7 +173,7 @@ export default {
         await axios.delete("/api/chefs/"+this.chef._id);
         this.getChefs();
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     },
     selectChef(chef) {
