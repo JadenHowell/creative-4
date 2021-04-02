@@ -83,7 +83,22 @@ export default {
     },
     changeFav(){
       this.selectedRecipe.favorite = !this.selectedRecipe.favorite;
+      this.putFavorite();
       //console.log(this.selectedRecipe.favorite);
+    },
+    async putFavorite(){
+      try{
+        let response = await axios.put("/api/chefs/"+this.selectedRecipe.chef+"/recipes/"+this.selectedRecipe._id,{
+            name: this.selectedRecipe.name,
+            link: this.selectedRecipe.link,
+            photoURL: this.selectedRecipe.photoURL,
+            favorite: this.selectedRecipe.favorite,
+            description: this.selectedRecipe.description,
+        });
+        console.log(response);
+      } catch (error){
+        console.log(error)
+      }
     }
   }
 }
@@ -120,6 +135,8 @@ export default {
 .selection{
   /*background-color: #00ff00;*/
   padding: 15px;
+  max-width: 550px;
+  margin: 0 auto;
 }
 
 .top-half{
